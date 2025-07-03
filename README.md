@@ -32,5 +32,4 @@ pip install requirements.txt
 ```bash
 python manage.py runserver
 ```
-## 🧑‍💻 توسعه‌داده‌شده توسط:
-[Mehrab](https://github.com/psdymehrab)
+## 🧑‍💻 توسعه‌داده‌شده توسط: [Mehrab](https://github.com/psdymehrab)
