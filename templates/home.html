@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>خانه | NoteKeeper</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">📝 NoteKeeper</a>
+      <div>
+        {% if user.is_authenticated %}
+          <a href="{% url 'notes:note_list' %}" class="btn btn-outline-light ms-2">یادداشت‌ها</a>
+          <a href="{% url 'account:logout' %}" class="btn btn-outline-light">خروج</a>
+        {% else %}
+          <a href="{% url 'account:login' %}" class="btn btn-outline-light ms-2">ورود</a>
+          <a href="{% url 'account:register' %}" class="btn btn-outline-light">ثبت‌نام</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero text-center">
+    <div class="container">
+      <h1>به NoteKeeper خوش آمدید!</h1>
+      <p>با این اپلیکیشن ساده، یادداشت‌هات رو مدیریت کن.</p>
+      {% if user.is_authenticated %}
+        <a href="{% url 'notes:add_note' %}" class="btn btn-primary mt-3">افزودن یادداشت جدید</a>
+      {% else %}
+        <a href="{% url 'account:login' %}" class="btn btn-primary mt-3">برای استفاده، وارد شوید</a>
+      {% endif %}
+    </div>
+  </section>
+
+  <footer class="text-center mt-5 mb-3 text-muted">
+    ساخته‌شده با ❤️ توسط شما
+  </footer>
+
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% csrf_token %}
+<div class="container mt-5">
+  <h2 class="mb-4">یادداشت‌های شما</h2>
+
+  <a href="{% url 'notes:add_note' %}" class="btn btn-success mb-3">افزودن یادداشت جدید</a>
+
+  {% if notes %}
+    <ul class="list-group">
+      {% for note in notes %}
+        <li class="list-group-item">
+          <h5>{{ note.title }}</h5>
+          <p>{{ note.content|linebreaks }}</p>
+          <small class="text-muted">ایجاد شده در {{ note.created|date:"Y/m/d - H:i" }}</small>
+          <div class="mt-2">
+            <a href="{% url 'notes:note_update' note.id %}" class="btn btn-sm btn-primary">ویرایش</a>
+            <a href="{% url 'notes:note_delete' note.id %}" class="btn btn-sm btn-danger">حذف</a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>فعلاً یادداشتی ندارید.</p>
+  {% endif %}
+</div>
+
+{% endblock %}

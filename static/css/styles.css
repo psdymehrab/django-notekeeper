@@ -1,0 +1,12 @@
+body {
+  font-family: "Vazir", sans-serif;
+  background-color: #f7f7f7;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+footer {
+  font-size: 14px;
+}
