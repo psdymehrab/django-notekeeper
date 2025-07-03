@@ -19,11 +19,18 @@
 
 ## 🚀 نحوه اجرا
 
-### 1. محیط مجازی بساز:
+1. محیط مجازی بساز:
 ```bash
 python -m venv venv
 source venv/bin/activate  # یا در ویندوز: venv\Scripts\activate
-
-### 2. نصب وابستگی ها:
+```
+2. نصب وابستگی ها:
 ```bash
 pip install requirements.txt
+```
+3. اجرای سرور:
+```bash
+python manage.py runserver
+```
+## 🧑‍💻 توسعه‌داده‌شده توسط:
+[Mehrab](https://github.com/psdymehrab)
