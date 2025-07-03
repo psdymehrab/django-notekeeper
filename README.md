@@ -24,3 +24,6 @@
 python -m venv venv
 source venv/bin/activate  # یا در ویندوز: venv\Scripts\activate
 
+### 2. نصب وابستگی ها:
+```bash
+pip install requirements.txt
